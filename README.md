@@ -1,7 +1,7 @@
 # Instalação 
 
 ## Abra o terminal e clone o seguinte repositório:
-$ https://github.com/torbenish/Beyou-API.git
+$ git clone https://github.com/torbenish/Beyou-API.git
 
 ## Instalar as dependências
 $ yarn add express mongoose nodemon dotenv cors
