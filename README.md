@@ -17,6 +17,7 @@ $ yarn start
 - **Nodemon**
 - **Dotenv**
 - **Cors**
+- **Insomnia**
 - **Heroku**
 
 ## Back-end:
