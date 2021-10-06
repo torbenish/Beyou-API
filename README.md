@@ -28,6 +28,6 @@ https://beyou-api.herokuapp.com/hello_world </br>
 Listagem de noticias: </br>
 https://beyou-api.herokuapp.com/list_posts </br>
 Noticia especifica por id: </br>
-https://beyou-api.herokuapp.com/show_post/615b9dcb82e31cda571808d
+https://beyou-api.herokuapp.com/show_post/615b9dcb82e31cda571808d </br>
 Noticia especifica por categoria: </br>
 https://beyou-api.herokuapp.com/list_posts/1
