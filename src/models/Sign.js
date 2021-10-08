@@ -1,20 +1,20 @@
 const mongoose = require("../database/db");
 
-const PostSchema = new mongoose.Schema({
-   title: {
+const SignSchema = new mongoose.Schema({
+  name: {
     type: String,
     required: true,
   },
-  summary: {
+  city: {
     type: String,
     required: true,
   },
-  content: {
+  email: {
     type: String,
     required: true,
   },
-  category: {
-    type: String,
+  telephone: {
+    type: Number,
     required: true,
   },
   createdAt: {
@@ -23,6 +23,6 @@ const PostSchema = new mongoose.Schema({
   },
 });
 
-const Post = mongoose.model("Post", PostSchema);
+const Sign = mongoose.model("Sign", SignSchema);
 
-module.exports = Post;
+module.exports = Sign;

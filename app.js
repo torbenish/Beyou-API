@@ -7,7 +7,9 @@ const cors = require("cors");
 
 const PORT = process.env.PORT;
 
-const Post = require("./models/Posts");
+const Post = require("./src/models/Posts");
+
+const Sign = require("./src/models/Sign")
 
 app.use(express.json());
 
@@ -61,7 +63,7 @@ app.get("/list_posts/1", async (req, res) => {
 
     const saudeId = req.params.saudeId;
 
-    const post = await Post.find({ category: 'saude'});
+    const post = await Post.find({ category: 'bebida'});
  
     res.send({ post} );
   } catch (err) {
@@ -95,6 +97,28 @@ app.delete("/delete_post/:post_id", async (req, res) => {
     await Post.findByIdAndDelete(postId);
 
     res.send({ msg: "Deletado com sucesso" });
+  } catch (err) {
+    res.status(400).send(err);
+  }
+});
+
+app.post("/create_sign", async (req, res) => {
+  try {
+    const { name, city, email, telephone } = req.body;
+
+    const sign = await Sign.create({ name, city, email, telephone });
+
+    res.send(sign);
+  } catch (err) {
+    res.status(400).send(err);
+  }
+});
+
+app.get("/list_sign", async (req, res) => {
+  try {
+    const sign = await Sign.find();
+
+    res.send({ sign });
   } catch (err) {
     res.status(400).send(err);
   }
