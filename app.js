@@ -26,9 +26,9 @@ app.post("/create", (req, res) => {
 
 app.post("/create_post", async (req, res) => {
   try {
-    const { title, summary, content, category } = req.body;
+    const { image, title, summary, content, category } = req.body;
 
-    const post = await Post.create({ title, summary, content, category });
+    const post = await Post.create({ image, title, summary, content, category });
 
     res.send(post);
   } catch (err) {
