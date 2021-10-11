@@ -15,15 +15,6 @@ app.use(express.json());
 
 app.use(cors());
 
-app.get("/hello_world", (req, res) => {
-  res.send("hello world");
-});
-
-app.post("/create", (req, res) => {
-  const title = req.body.title;
-  res.send(`Titulo: ${title}`);
-});
-
 app.post("/create_post", async (req, res) => {
   try {
     const { image, title, summary, content, category } = req.body;
@@ -63,7 +54,7 @@ app.get("/list_posts/1", async (req, res) => {
 
     const saudeId = req.params.saudeId;
 
-    const post = await Post.find({ category: 'bebida'});
+    const post = await Post.find({ category: 'comida'});
  
     res.send({ post} );
   } catch (err) {
@@ -123,6 +114,19 @@ app.get("/list_sign", async (req, res) => {
     res.status(400).send(err);
   }
 });
+
+app.delete("/delete_post/:sign_id", async (req, res) => {
+  try {
+    const signId = req.params.sign_id;
+
+    await Sign.findByIdAndDelete(signId);
+
+    res.send({ msg: "Deletado com sucesso" });
+  } catch (err) {
+    res.status(400).send(err);
+  }
+});
+
 
 app.listen(PORT, () => {
   console.log(`Server running on port: ${PORT}`);
