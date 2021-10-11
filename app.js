@@ -67,11 +67,11 @@ app.patch("/update_post/:post_id", async (req, res) => {
   try {
     const postId = req.params.post_id;
 
-    const { title, summary, content, category } = req.body;
+    const { image, title, summary, content, category } = req.body;
 
     const post = await Post.findByIdAndUpdate(
       postId,
-      { title, summary, content, category },
+      { image, title, summary, content, category },
       { new: true }
     );
 
