@@ -1,4 +1,5 @@
 const mongoose = require("../database/db");
+const { isEmail } = require("validator");
 
 const SignSchema = new mongoose.Schema({
   name: {
@@ -12,10 +13,14 @@ const SignSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
+    lowercase: true,
+    trim: true,
+    validate: [isEmail, "invalid email"],
   },
   telephone: {
     type: Number,
     required: true,
+    trim: true,
   },
   createdAt: {
     type: Date,

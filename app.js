@@ -9,7 +9,7 @@ const PORT = process.env.PORT;
 
 const Post = require("./src/models/Posts");
 
-const Sign = require("./src/models/Sign")
+const Sign = require("./src/models/Sign");
 
 app.use(express.json());
 
@@ -19,7 +19,13 @@ app.post("/create_post", async (req, res) => {
   try {
     const { image, title, summary, content, category } = req.body;
 
-    const post = await Post.create({ image, title, summary, content, category });
+    const post = await Post.create({
+      image,
+      title,
+      summary,
+      content,
+      category,
+    });
 
     res.send(post);
   } catch (err) {
@@ -50,18 +56,16 @@ app.get("/show_post/:post_id", async (req, res) => {
 });
 
 app.get("/list_posts/1", async (req, res) => {
-  try { 
-
+  try {
     const saudeId = req.params.saudeId;
 
-    const post = await Post.find({ category: 'comida'});
- 
-    res.send({ post} );
+    const post = await Post.find({ category: "comida" });
+
+    res.send({ post });
   } catch (err) {
     res.status(400).send(err);
   }
 });
-
 
 app.patch("/update_post/:post_id", async (req, res) => {
   try {
@@ -115,7 +119,7 @@ app.get("/list_sign", async (req, res) => {
   }
 });
 
-app.delete("/delete_post/:sign_id", async (req, res) => {
+app.delete("/delete_sign/:sign_id", async (req, res) => {
   try {
     const signId = req.params.sign_id;
 
@@ -126,7 +130,6 @@ app.delete("/delete_post/:sign_id", async (req, res) => {
     res.status(400).send(err);
   }
 });
-
 
 app.listen(PORT, () => {
   console.log(`Server running on port: ${PORT}`);
