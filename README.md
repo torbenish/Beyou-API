@@ -47,6 +47,7 @@ $ npm start ou yarn start
 - **[Nodemon](https://nodemon.io/)**
 - **[Dotenv](https://www.npmjs.com/package/dotenv)**
 - **[Cors](https://www.npmjs.com/package/cors)**
+- **[Validator.js](https://github.com/validatorjs/validator.js)**
 - **[Insomnia](https://insomnia.rest/heroku)**
 - **[MongoDB](https://www.mongodb.com/pt-br)**
 - **[Heroku](https://www.heroku.com/home)**
