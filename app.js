@@ -17,13 +17,14 @@ app.use(cors());
 
 app.post("/create_post", async (req, res) => {
   try {
-    const { image, title, summary, content, category } = req.body;
+    const { image, title, author, summary, text, category } = req.body;
 
     const post = await Post.create({
       image,
       title,
+      author,
       summary,
-      content,
+      text,
       category,
     });
 
@@ -55,11 +56,71 @@ app.get("/show_post/:post_id", async (req, res) => {
   }
 });
 
-app.get("/list_posts/1", async (req, res) => {
+app.get("/list_posts/saude", async (req, res) => {
   try {
     const saudeId = req.params.saudeId;
 
-    const post = await Post.find({ category: "comida" });
+    const post = await Post.find({ category: "saude" });
+
+    res.send({ post });
+  } catch (err) {
+    res.status(400).send(err);
+  }
+});
+
+app.get("/list_posts/transicao", async (req, res) => {
+  try {
+    const transicaoId = req.params.saudeId;
+
+    const post = await Post.find({ category: "transicao" });
+
+    res.send({ post });
+  } catch (err) {
+    res.status(400).send(err);
+  }
+});
+
+app.get("/list_posts/exercicios", async (req, res) => {
+  try {
+    const exerciciosId = req.params.exerciciosId;
+
+    const post = await Post.find({ category: "exercicios" });
+
+    res.send({ post });
+  } catch (err) {
+    res.status(400).send(err);
+  }
+});
+
+app.get("/list_posts/efeitos", async (req, res) => {
+  try {
+    const efeitosId = req.params.efeitosId;
+
+    const post = await Post.find({ category: "efeitos" });
+
+    res.send({ post });
+  } catch (err) {
+    res.status(400).send(err);
+  }
+});
+
+app.get("/list_posts/remedios", async (req, res) => {
+  try {
+    const remediosId = req.params.remediosId;
+
+    const post = await Post.find({ category: "remedios" });
+
+    res.send({ post });
+  } catch (err) {
+    res.status(400).send(err);
+  }
+});
+
+app.get("/list_posts/hormonios", async (req, res) => {
+  try {
+    const hormoniosId = req.params.hormoniosId;
+
+    const post = await Post.find({ category: "hormonios" });
 
     res.send({ post });
   } catch (err) {
@@ -71,11 +132,11 @@ app.patch("/update_post/:post_id", async (req, res) => {
   try {
     const postId = req.params.post_id;
 
-    const { image, title, summary, content, category } = req.body;
+    const { image, title, author, summary, text, category } = req.body;
 
     const post = await Post.findByIdAndUpdate(
       postId,
-      { image, title, summary, content, category },
+      { image, title, author, summary, text, category },
       { new: true }
     );
 
@@ -99,9 +160,9 @@ app.delete("/delete_post/:post_id", async (req, res) => {
 
 app.post("/create_sign", async (req, res) => {
   try {
-    const { name, city, email, telephone } = req.body;
+    const { name, socialname, city, email, telephone } = req.body;
 
-    const sign = await Sign.create({ name, city, email, telephone });
+    const sign = await Sign.create({ name, socialname, city, email, telephone });
 
     res.send(sign);
   } catch (err) {

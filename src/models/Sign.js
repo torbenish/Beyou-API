@@ -6,6 +6,10 @@ const SignSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  socialname: {
+    type: String,
+    required: true,
+  },
   city: {
     type: String,
     required: true,

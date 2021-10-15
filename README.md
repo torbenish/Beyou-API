@@ -9,7 +9,8 @@
 </p>
 
 ## 📄Sobre
-  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex aut maxime adipisci ratione! Eos, ea tenetur iure saepe placeat voluptatibus.</p>
+  <p>Projeto final do Gama Experience #38. A proposta foi desenvolver um plano de saúde voltado para afirmação de gênero e terapia hormonal na palma da sua mão.<br/>
+  A Noun é mais que um plano de saúde, nós selecionamos uma equipe multidisciplinar totalmente capacitada para você ir muito mais longe e livre de preconceitos, incrível não é? :D. Além de tudo isso, oferecemos desconto de farmácias, academia e outros estabelecimentos através do nosso time de parceiros.</p>
   
 - [NOUN Saude Trans API](https://nounsaude-api.herokuapp.com/)
   
@@ -31,14 +32,13 @@ $ npm start ou yarn start
 ## Endereços
 
 - **[Lista de posts](https://nounsaude-api.herokuapp.com/list_posts)**
-- **[Post especifico]()**
-- **[Lista de cadastro](https://nounsaude-api.herokuapp.com/list_sign)**
-- **[Categoria: Saúde](https://nounsaude-api.herokuapp.com/list_posts/1)**
-- **[Categoria: Transição ]()**
-- **[Categoria: Exercicios]()**
-- **[Categoria: Efeitos]()**
-- **[Categoria: Remédios]()**
-- **[Categoria: Hormônios]()**
+- **[Lista de cadastro realizada no formulário do site](https://nounsaude-api.herokuapp.com/list_sign)**
+- **[Categoria: Saúde](https://nounsaude-api.herokuapp.com/list_posts/saude)**
+- **[Categoria: Transição ](https://nounsaude-api.herokuapp.com/list_posts/transicao)**
+- **[Categoria: Exercicios](https://nounsaude-api.herokuapp.com/list_posts/exercicios)**
+- **[Categoria: Efeitos](https://nounsaude-api.herokuapp.com/list_posts/efeitos)**
+- **[Categoria: Remédios](https://nounsaude-api.herokuapp.com/list_posts/remedios)**
+- **[Categoria: Hormônios](https://nounsaude-api.herokuapp.com/list_posts/hormonios)**
 
 ## 🔧Tecnologias
 
